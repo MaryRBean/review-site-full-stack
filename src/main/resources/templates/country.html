@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="./css/styles.css"/>
+<link rel="stylesheet" href="./css/layout.css"/>
+<title>A review</title>
+</head>
+
+<body>
+
+	<header>
+		<h1> A Review </h1>
+	</header>
+
+	<div>
+		<h2 th:text="${country.countryName}"></h2>
+		<h2 th:text="${country.reviewCategory}"></h2>
+		<h2 th:text="${country.reviewContent}"></h2>
+		<h2 th:text="${country.weather}"></h2>
+		<h2 th:text="${country.countryFood}"></h2>
+		<img th:src = "${country.img}"></img>
+	<footer>
+		<h3><a href="/foods">All Foods</a></h3>
+		<h3><a href="/allweather">All Weather</a></h3>
+		<h3><a href="http://localhost:8080/countries">Back to home</a></h3>
+		
+	</footer>	
+	</div>
+
+</body>
+</html>

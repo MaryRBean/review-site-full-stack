@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Food</title>
+</head>
+
+<body>
+	<h3><a href="/countries">All Countries</a></h3>
+	<h3><a href="/foods">All Foods</a></h3>
+	<h3><a href="/allweather">All Weather</a></h3>
+		
+	<header>
+		<h1>This is Cultural Food</h1>
+	</header>
+		
+		<p th:text="${food.foodType}"></p>
+		
+		<div th:each="currentCountry: ${food.countryByFood}"> 
+		<p th:text="${currentCountry.countryName}"></p>
+		</div>
+		<a href="http://localhost:8080/countries-home">Home</a>
+	</body>
+</html>
