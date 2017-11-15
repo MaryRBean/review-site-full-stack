@@ -16,7 +16,7 @@ public class Country {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String countryName;
 	private String img;
 	private String reviewCategory;
@@ -32,17 +32,18 @@ public class Country {
 	protected Country() {
 	}
 
-	public Country(String countryName, String img, String reviewCategory, String reviewContent, Weather weather, Food... countryFood) {
-		this.countryName= countryName;
-		this.img= img;
-		this.reviewCategory= reviewCategory;
+	public Country(String countryName, String img, String reviewCategory, String reviewContent, Weather weather,
+			Food... countryFood) {
+		this.countryName = countryName;
+		this.img = img;
+		this.reviewCategory = reviewCategory;
 		this.reviewContent = reviewContent;
-		this.weather = weather; 
-		this.countryFood = new HashSet(Arrays.asList(countryFood));
+		this.weather = weather;
+		this.countryFood = new HashSet<Food>(Arrays.asList(countryFood));
 	}
 
 	public Country(Weather hot, String string, Food spicy, Food savory) {
-		
+
 	}
 
 	public Country(Weather rainy, String string, Food savory, Food bland, Food sweet) {
@@ -90,25 +91,9 @@ public class Country {
 		return countryFood;
 	}
 
-	// setters
-	public void setWeather(Weather weather) {
-		this.weather = weather;
-	}
-
-	public void setCountryName(String countryName) {
-		this.countryName = countryName;
-	}
-
-	public void setCountryFood(Set<Food> countryFood) {
-		this.countryFood = countryFood;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	@Override
 	public String toString() {
-		return countryName + ""+ img + "" + reviewCategory + "" + reviewContent + "" + weather + "" + countryName + "" + countryFood;
+		return countryName + "" + img + "" + reviewCategory + "" + reviewContent + "" + weather + "" + countryName + ""
+				+ countryFood;
 	}
 }

@@ -3,8 +3,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="stylesheet" href="./css/styles.css"/>
-<link rel="stylesheet" href="./css/layout.css"/>
+<link rel="stylesheet" href="./css/styles.css" />
+<link rel="stylesheet" href="./css/layout.css" />
 
 <title>A list of weather</title>
 </head>
@@ -12,12 +12,13 @@
 <body>
 	<header>
 		<h1>A List of Weather</h1>
-		
+
 	</header>
-	
-	<div th:each="country: ${allWeather}">
+
+	<div th:each="weather: ${allweather}">
 		<h2>
-			<a th:href="@{/country(id=${country.id})}" th:text="${country.countryName}"></a>
+			<a th:href="@{/weather(id=${weather.id})}"
+				th:text="${weather.weather}"></a>
 		</h2>
 	</div>
 

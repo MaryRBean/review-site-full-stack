@@ -21,17 +21,11 @@ public class ReviewController {
 	@RequestMapping("/")
 	public String getAllCountriesIndex(Model model) {
 		model.addAttribute("countries", countryRepo.findAll());
-		return "countries-home";
-	}
-
-	@RequestMapping("/countries-home")
-	public String getHomePage(Model model) {
-		model.addAttribute("countries", countryRepo.findAll());
-		return "countries-home";
+		return "countries";
 	}
 
 	@RequestMapping("/countries")
-	public String getAllCountries(Model model) {
+	public String getHomePage(Model model) {
 		model.addAttribute("countries", countryRepo.findAll());
 		return "countries";
 	}
@@ -56,8 +50,8 @@ public class ReviewController {
 
 	@RequestMapping("/allweather")
 	public String getAllWeather(Model model) {
-		model.addAttribute("allWeather", weatherRepo.findAll());
-		return "allWeather";
+		model.addAttribute("allweather", weatherRepo.findAll());
+		return "allweather";
 	}
 
 	@RequestMapping("/weather")

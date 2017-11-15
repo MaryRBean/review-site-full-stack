@@ -4,22 +4,30 @@
 
 <head>
 <title>Weather</title>
+<link rel="stylesheet" href="./css/styles.css" />
+<link rel="stylesheet" href="./css/layout.css" />
 </head>
 
 <body>
-	<h3><a href="/countries">All Countries</a></h3>
-	<h3><a href="/foods">All Foods</a></h3>
-	<h3><a href="/allweather">All Weather</a></h3>
-		
+	<h3>
+		<a href="/countries">All Countries</a>
+	</h3>
+	<h3>
+		<a href="/foods">All Foods</a>
+	</h3>
+	<h3>
+		<a href="/allweather">All Weather</a>
+	</h3>
+
 	<header>
 		<h1>This is the Weather</h1>
 	</header>
-		
-		<p th:text="${weather.weather}"></p>
-		
-		<div th:each="currentCountry: ${weather.countryByWeather}"> 
-		<p th:text="${currentCountry.countryName}"></p>
-		</div>
-		<a href="http://localhost:8080/countries-home">Home</a>
-	</body>
+
+	<p th:text="${weather.weather}"></p>
+
+	<div th:each="country: ${weather.countryByWeather}">
+		<a th:href="@{/country(id=${country.id})}" th:text="${country.countryName}"></a>
+	</div>
+	<a href="http://localhost:8080/countries">Home</a>
+</body>
 </html>

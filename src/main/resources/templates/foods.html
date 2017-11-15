@@ -3,23 +3,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Our Foods</title>
+<title>Our Foods</title>
+<link rel="stylesheet" href="./css/styles.css" />
+<link rel="stylesheet" href="./css/layout.css" />
 </head>
 
 <body>
-	<h3><a href="/countries">All Countries</a></h3>
-	<h3><a href="/foods">All Foods</a></h3>
-	<h3><a href="/allweather">All Weather</a></h3>
-		<div>
-	<header>
-<h1>These are the foods</h1>
-</header>
-	<h2>Country Foods</h2>
-	<ul>
-		<li th:each="food: ${foods}">
-		<a th:href="@{/food(id=${food.id})}" th:text="${food.foodType}"></a>
-		</li>
-	</ul>
+	<h3>
+		<a href="/countries">All Countries</a>
+	</h3>
+	<h3>
+		<a href="/foods">All Foods</a>
+	</h3>
+	<h3>
+		<a href="/allweather">All Weather</a>
+	</h3>
+	<div>
+		<header>
+			<h1>These are the foods</h1>
+		</header>
+		<h2>Country Foods</h2>
+		<ul>
+			<li th:each="food: ${foods}"><a
+				th:href="@{/food(id=${food.id})}" th:text="${food.foodType}"></a></li>
+		</ul>
 	</div>
 	<a href="http://localhost:8080/books-home">Home</a>
 </body>

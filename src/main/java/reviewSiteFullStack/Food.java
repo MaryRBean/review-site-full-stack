@@ -9,17 +9,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Food {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
 
 	private String foodType;
-	
+
 	protected Food() {
 	}
 
-	@ManyToMany(mappedBy = "foodType")
+	@ManyToMany(mappedBy = "countryFood")
 	private Set<Country> countryByFood; // used for individual pages ex: author.html, genre.html
 
 	// constructors
